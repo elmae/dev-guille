@@ -1,0 +1,59 @@
+@use './abstracto' as ab;
+@include ab.media-md {
+	.menu-btn {
+		visibility: hidden;
+	}
+	.nav {
+		visibility: visible;
+
+		.menu-nav {
+			display: block;
+			transform: translateX(0);
+			height: 100%;
+			background: transparent;
+			text-align: right;
+
+			&__item {
+				display: inline;
+				padding-right: 1.5rem;
+			}
+			&__link {
+				font-size: 1.5rem;
+			}
+		}
+	}
+	.about__bio {
+		font-size: 1.5rem;
+	}
+	.especialidades {
+		&__bio-image {
+			height: 60vh;
+		}
+		&__items {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		.text-secondary {
+			font-size: 3rem;
+		}
+	}
+	.contact__list {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@include ab.media-lg {
+	.especialidades {
+		&__items {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+	.contact__list {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+@include ab.media-xl {
+	.especialidades {
+		&__bio-image {
+			height: 50vh;
+		}
+	}
+}
